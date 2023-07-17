@@ -74,14 +74,14 @@ public class RemoteConnectionInstanceWorkflow extends InstanceWorkflowImpl {
         return remoteConnection;
     }
 
-    private void validateSettings(ServiceInstance remoteInstance, ServiceDefinitionProxy serviceDef, PlanProxy plan, Map<String, Object> parameters) {
-        Map<String, Object> settings = ecs.mergeParameters(serviceDef, plan, parameters);
-
-        Map<String, MapDifference.ValueDifference<Object>> settingsDiff = Maps.difference(settings, remoteInstance.getServiceSettings()).entriesDiffering();
-        if (!settingsDiff.isEmpty()) {
-            throw new ServiceBrokerException("service definition must match between local and remote instances");
-        }
-    }
+//    private void validateSettings(ServiceInstance remoteInstance, ServiceDefinitionProxy serviceDef, PlanProxy plan, Map<String, Object> parameters) {
+        //Map<String, Object> settings = ecs.mergeParameters(serviceDef, plan, parameters);
+//
+  //      Map<String, MapDifference.ValueDifference<Object>> settingsDiff = Maps.difference(settings, remoteInstance.getServiceSettings()).entriesDiffering();
+    //    if (!settingsDiff.isEmpty()) {
+      //      throw new ServiceBrokerException("service definition must match between local and remote instances");
+        //}
+    //}
 
     private ServiceInstance getRemoteInstance(Map<String, String> remoteConnectionParams) throws IOException {
         String remoteInstanceId = remoteConnectionParams.get(CREDENTIALS_INSTANCE_ID);
